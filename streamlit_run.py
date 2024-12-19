@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_chat import message
 import time
 from core.run import ask_redshift
+from streamlit import secrets
 
 def main():
     st.set_page_config(page_title="Ask Your Data", layout="wide")
@@ -21,13 +22,17 @@ def main():
         st.session_state.messages = []
 
     # Create the main input and button
+    code = st.text_input("Secret Code..")
     question = st.text_input("Type your question here...")
     
     # Create a button with spinner
-    if st.button("Ask") and question: 
+    if st.button("Ask") and question and code: 
         st.session_state.messages.append({"role": "user", "content": question})
         with st.spinner("Processing your question..."):
-            response = ask_redshift(question)
+            if code == secrets["RS_SECRET"]:
+                response = ask_redshift(question)
+            else:
+                response = "Access Denied"
             # Add the Q&A pair to chat history
             st.session_state.messages.append({
                 "role": "assistant", 
@@ -52,6 +57,7 @@ def main():
         
         # Add "Crawled Tables (3)" header
         st.subheader("A Generative AI Chat Bot for LRT Demo, Interacting with Redshift Database")
+        
         
         
 
