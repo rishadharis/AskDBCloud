@@ -5,7 +5,7 @@ from core.run import ask_redshift
 from streamlit import secrets
 
 def main():
-    st.set_page_config(page_title="Ask Your Data", layout="wide")
+    st.set_page_config(page_title="Ask Your Data - LRT & CK", layout="wide")
     # Set page title and subtitle
     st.title("Ask Your Data")
     st.markdown("An GenAI app to interact with Redshift Database")
