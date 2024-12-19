@@ -6,15 +6,16 @@ from langchain_pinecone import PineconeVectorStore
 from dotenv import load_dotenv
 import os
 from pathlib import Path
+from streamlit import secrets
 
 
 current_dir = Path(__file__).resolve().parent
 dotenv_path = current_dir.parent / '.env'
 load_dotenv(dotenv_path)
 
-openai_api_key = os.getenv("OPENAI_API_KEY")
-pinecone_api_key = os.getenv("PINECONE_API_KEY")
-pinecone_index_name = os.getenv("PINECONE_INDEX_NAME")
+openai_api_key = secrets["OPENAI_API_KEY"]
+pinecone_api_key = secrets["PINECONE_API_KEY"]
+pinecone_index_name = secrets["PINECONE_INDEX_NAME"]
 
 if __name__ == "__main__":
     """

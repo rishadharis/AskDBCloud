@@ -6,13 +6,15 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 from langchain.schema import Document
+from streamlit import secrets
 
 current_dir = Path(__file__).resolve().parent
 dotenv_path = current_dir.parent / '.env'
 load_dotenv(dotenv_path)
-openai_api_key = os.getenv('OPENAI_API_KEY')
 
-redshift_dsn = os.getenv("REDSHIFT_DSN")
+openai_api_key = secrets["OPENAI_API_KEY"]
+redshift_dsn = secrets["REDSHIFT_DSN"]
+
 engine = sa.create_engine(redshift_dsn)
 
 def parse_foreign_key_constraint(sql_statement):

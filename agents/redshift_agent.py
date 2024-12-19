@@ -14,19 +14,20 @@ from langchain.agents.format_scratchpad import format_log_to_str
 from langchain_pinecone import PineconeVectorStore
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.exceptions import OutputParserException
+from streamlit import secrets
 
 
 current_dir = Path(__file__).resolve().parent
 dotenv_path = current_dir.parent / '.env'
 load_dotenv(dotenv_path)
 
-redshift_dsn = os.getenv("REDSHIFT_DSN")
+redshift_dsn = secrets["REDSHIFT_DSN"]
 
 engine = sa.create_engine(redshift_dsn)
 
-openai_api_key = os.getenv("OPENAI_API_KEY")
-pinecone_api_key = os.getenv("PINECONE_API_KEY")
-pinecone_index_name = os.getenv("PINECONE_INDEX_NAME")
+openai_api_key = secrets["OPENAI_API_KEY"]
+pinecone_api_key = secrets["PINECONE_API_KEY"]
+pinecone_index_name = secrets["PINECONE_INDEX_NAME"]
 
 @tool
 def validate_redshift_query(query: str) -> str:
