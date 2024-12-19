@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+psycopg2-binary = "*"
+sqlalchemy = "*"
+sqlalchemy-redshift = "*"
+setuptools = "*"
+langchain = "*"
+langchain-openai = "*"
+openai = "*"
+langchain-community = "*"
+langchain-pinecone = "*"
+streamlit = "*"
+streamlit-chat = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
