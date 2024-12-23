@@ -74,28 +74,28 @@ def main():
         # Add example tables with schema and timestamp
         tables = [
             {
-                "name": "dm_sales",
-                "schema": "lrt_demo",
+                "name": "sales_transaction",
+                "schema": "railways_mart",
                 "last_crawled": "2024-12-19 10:30:00"
             },
             {
-                "name": "dm_incident_maintenance", 
-                "schema": "lrt_demo",
+                "name": "incident_maintenance", 
+                "schema": "railways_mart",
                 "last_crawled": "2024-12-19 09:45:00"
             },
             {
-                "name": "dm_route",
-                "schema": "lrt_demo", 
+                "name": "route",
+                "schema": "railways_mart", 
                 "last_crawled": "2024-12-19 08:15:00"
             },
             {
-                "name": "dm_route_performance_metrics",
-                "schema": "lrt_demo", 
+                "name": "route_performance_metrics",
+                "schema": "railways_mart", 
                 "last_crawled": "2024-12-19 08:15:00"
             },
             {
-                "name": "dm_financial_performance_metrics",
-                "schema": "lrt_demo", 
+                "name": "financial_performance_metrics",
+                "schema": "railways_mart", 
                 "last_crawled": "2024-12-19 08:15:00"
             }
         ]

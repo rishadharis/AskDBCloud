@@ -24,24 +24,24 @@ if __name__ == "__main__":
     """
     list_of_tables = [
         {
-            "schema_name": "lrt_demo",
-            "table_name": "dm_route"
+            "schema_name": "railway_mart",
+            "table_name": "route"
         },
         {
-            "schema_name": "lrt_demo",
-            "table_name": "dm_sales"
+            "schema_name": "railway_mart",
+            "table_name": "sales_transaction"
         },
         {
-            "schema_name": "lrt_demo",
-            "table_name": "dm_incident_maintenance"
+            "schema_name": "railway_mart",
+            "table_name": "incident_maintenance"
         },
         {
-            "schema_name": "lrt_demo",
-            "table_name": "dm_route_performance_metrics"
+            "schema_name": "railway_mart",
+            "table_name": "route_performance_metrics"
         },
         {
-            "schema_name": "lrt_demo",
-            "table_name": "dm_financial_performance_metrics"
+            "schema_name": "railway_mart",
+            "table_name": "financial_performance_metrics"
         }
     ]
 
